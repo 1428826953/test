@@ -1,0 +1,12 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+div{
+	width: 27%;
+	padding-bottom: 27%;
+	margin: 3%;
+	background: #fea500;
+	border-radius: 20%;
+	float: left;
+}
