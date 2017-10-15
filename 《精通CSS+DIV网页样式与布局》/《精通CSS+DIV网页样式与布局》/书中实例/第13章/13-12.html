@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>舞台灯光</title>
+<style type="text/css">
+<!--
+body{
+	background-color:#000000;
+}
+td{
+	filter:light;
+}
+-->
+</style>
+   <style type="text/css">
+<!--
+body{
+	background-color:#f8ffd3;
+	margin:0px; padding:0px;
+}
+table.banner{
+	background:url(banner_bg.jpg) repeat-x;
+	width:100%;
+}
+table.btn{
+	background:url(button1_bg.jpg) repeat-x;
+	width:100%;
+}
+#navigation{
+	margin:0px; padding:0px;
+	list-style-type:none;
+	height:32px;
+	font-size:12px;
+}
+#navigation li{
+	text-align:center; width:130px; height:32px;
+	background:url(button1.jpg) repeat-x;
+	float:left;	
+}
+#navigation li a{
+	padding:10px 0px 10px 0px;
+	text-decoration:none;
+	display:block;
+}
+#navigation li a:link, #navigation li a:visited{color:#526d00;}
+#navigation li a:hover{
+	color:#FFFFFF;
+	background:url(button2.jpg) no-repeat;
+}
+
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+<body>
+<table>
+	<tr>
+	<td id="flttgt"><img src="mm.jpg"></td>
+	</tr>
+</table>
+<script language="javascript">
+var g_numlights=0;
+flttgt.onclick=keyhandler;			//点击鼠标
+flttgt.onmousemove=mousehandler;	//鼠标移动时
+function setlights(){
+	flttgt.filters[0].clear();		//先清空所有光源
+	flttgt.filters[0].addcone(-10,- 10,5,275,370,0,0,150,60,10);	//添加蓝色光源
+	if (g_numlights>0){
+		flttgt.filters[0].addcone (285,-10,5,0,370,150,0,0,60,10);	//添加红色光源
+		if (g_numlights>1)
+			flttgt.filters[0].addcone (138,380,5,138,0,0,150,0,60,15);	//添加绿色光
+	}
+} 
+function keyhandler(){
+	g_numlights= (g_numlights+=1)%3;
+	setlights();
+}
+function mousehandler(){
+	x=(window.event.x-80);
+	y=(window.event.y-80);
+	flttgt.filters[0].movelight(0,x,y,5,1);		//移动蓝光
+	if (g_numlights>0){
+		flttgt.filters[0].movelight(1,x,y,5,1);	//移动红光
+		if (g_numlights>1)
+			flttgt.filters[0].movelight(2,x,y,5,1);	//移动绿光
+	}
+}
+setlights();
+</script>
+</body>

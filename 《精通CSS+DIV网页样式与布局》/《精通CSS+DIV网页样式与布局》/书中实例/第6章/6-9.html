@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>像文字一样的按钮</title>
+<style>
+<!--
+body{
+	background-color:#daeeff;			/* 页面背景色 */
+}
+form{
+	margin:0px; padding:0px;
+	font:14px;
+}
+input{
+	font:14px Arial;
+}
+.txt{
+	border-bottom:1px solid #005aa7;	/* 下划线效果 */
+	color:#005aa7;
+	border-top:0px; border-left:0px;
+	border-right:0px;
+	background-color:transparent;		/* 背景色透明 */
+}
+.btn{
+	background-color:transparent;		/* 背景色透明 */
+	border:0px;							/* 边框取消 */
+}
+-->
+</style>
+   <style type="text/css">
+<!--
+body{
+	background-color:#f8ffd3;
+	margin:0px; padding:0px;
+}
+table.banner{
+	background:url(banner_bg.jpg) repeat-x;
+	width:100%;
+}
+table.btn{
+	background:url(button1_bg.jpg) repeat-x;
+	width:100%;
+}
+#navigation{
+	margin:0px; padding:0px;
+	list-style-type:none;
+	height:32px;
+	font-size:12px;
+}
+#navigation li{
+	text-align:center; width:130px; height:32px;
+	background:url(button1.jpg) repeat-x;
+	float:left;	
+}
+#navigation li a{
+	padding:10px 0px 10px 0px;
+	text-decoration:none;
+	display:block;
+}
+#navigation li a:link, #navigation li a:visited{color:#526d00;}
+#navigation li a:hover{
+	color:#FFFFFF;
+	background:url(button2.jpg) no-repeat;
+}
+
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+<body>
+<form method="post">
+	请输入您的信息: <input type="text" name="name" id="name" class="txt">
+	<input type="submit" name="btnSubmit" id="btnSubmit" value="Submit>>" class="btn">
+</form>
+</body>
+</html>
